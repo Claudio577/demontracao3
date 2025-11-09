@@ -130,6 +130,16 @@ with col3:
     if img_fraud:
         st.image(img_fraud, caption="Simulação de Ataque e Recuperação de Nós", use_column_width=True)
         st.markdown("<p style='color:#444;'>Demonstra o cenário de corrupção de dados e a recuperação automática por consenso majoritário.</p>", unsafe_allow_html=True)
+# 🔹 Integração Web3 (Simulada)
+img_web3_sim = crop_white_borders("smartlog_fire.png")
+if img_web3_sim:
+    st.image(img_web3_sim, caption="Integração Web3 (Simulada) — Transação do Contrato Inteligente", use_column_width=False)
+    st.markdown("""
+    <p style='color:#444;'>
+    Painel que mostra o envio de uma transação blockchain simulada para o contrato inteligente <b>SmartLogLedger</b>.  
+    Apresenta o endereço do contrato, o hash da transação, o bloco da rede e o status de sucesso, simulando a comunicação com a <b>camada Web3</b>.
+    </p>
+    """, unsafe_allow_html=True)
 
 # 4️⃣ Firestore
 img_fire = crop_white_borders("smartlog_firestore_auditoria.png")
