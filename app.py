@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # ============================================================
-# 🎨 ESTILO LIMPO E PROFISSIONAL
+# 🎨 ESTILO PROFISSIONAL E CENTRALIZADO
 # ============================================================
 st.markdown("""
 <style>
@@ -20,11 +20,12 @@ body {
     color: #222;
     font-family: 'Poppins', sans-serif;
 }
-header, [data-testid="stHeader"] {
-    display: none;
-}
 h1, h2, h3, h4 {
     font-weight: 600;
+    text-align: center;
+}
+p {
+    text-align: justify;
 }
 a {
     color: #2D8CFF !important;
@@ -38,6 +39,10 @@ img {
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     margin-top: 1rem;
     margin-bottom: 1.5rem;
+}
+hr {
+    border: 1px solid #eee;
+    margin: 2rem 0;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -65,21 +70,26 @@ def crop_white_borders(img_path, base_width=600):
 # ============================================================
 # 🧠 CABEÇALHO PRINCIPAL
 # ============================================================
-st.markdown("<h1 style='text-align:center; color:#2D8CFF;'>SmartLog Blockchain</h1>", unsafe_allow_html=True)
-st.markdown("<h4 style='text-align:center; color:#FF6F61;'>Simulador de Consenso e Detecção de Fraude — Proof of Authority (PoA)</h4>", unsafe_allow_html=True)
+st.markdown("<h1 style='color:#2D8CFF;'>SmartLog Blockchain</h1>", unsafe_allow_html=True)
+st.markdown("<h4 style='color:#FF6F61;'>Simulador de Consenso e Detecção de Fraude — Proof of Authority (PoA)</h4>", unsafe_allow_html=True)
+st.markdown("<hr>", unsafe_allow_html=True)
 
+# ============================================================
+# 👨‍💻 SOBRE O DESENVOLVEDOR
+# ============================================================
 st.markdown("""
 ### Sobre o Desenvolvedor
 Sou **estudante e desenvolvedor na área de Inteligência Artificial aplicada (Machine Learning)**,  
-atualmente atuando em **projetos de IA Educacional, FinTech e Blockchain Inteligente**.
+atuando em **projetos de IA Educacional, FinTech e Blockchain Inteligente**.
 
-No **curso em Machine Learning**, desenvolvo **protótipos funcionais** que conectam modelos de IA e sistemas reais,  
-utilizando tecnologias como **Streamlit, Firebase, TensorFlow, Web3 e Scikit-Learn**.
+Durante o curso de **Machine Learning**, desenvolvo **protótipos funcionais** que conectam IA e sistemas reais,  
+utilizando **Streamlit, Firebase, TensorFlow, Web3 e Scikit-Learn**.
 
 O **SmartLog Blockchain** é um **aplicativo educacional e técnico** que demonstra como a **IA e a Blockchain**  
 podem ser aplicadas em **sistemas logísticos e auditorias descentralizadas**, simulando **fraudes, consenso e recuperação de dados**.
 """)
 
+st.markdown("<hr>", unsafe_allow_html=True)
 
 # ============================================================
 # 🚀 SOBRE O PROJETO
@@ -89,7 +99,7 @@ st.markdown("""
 O **SmartLog Blockchain** é um **simulador visual e interativo** do mecanismo de consenso **Proof-of-Authority (PoA)**,  
 utilizado em **redes privadas e logísticas**.
 
-Ele permite que estudantes e profissionais **visualizem e compreendam** o funcionamento interno de uma rede blockchain,  
+Ele permite que estudantes e profissionais **visualizem e compreendam** o funcionamento de uma rede blockchain,  
 onde **nós validadores** registram, auditam e sincronizam eventos logísticos, como entregas e rastreamentos.
 
 Com ele, é possível:
@@ -99,6 +109,7 @@ Com ele, é possível:
 - Conectar-se a sistemas **Web3 e Firestore** para armazenamento em nuvem.
 """)
 
+st.markdown("<hr>", unsafe_allow_html=True)
 
 # ============================================================
 # 🖼️ ETAPAS DO PROJETO
@@ -107,58 +118,28 @@ st.markdown("<h2 style='color:#4B7BE5;'>Etapas Visuais do Projeto</h2>", unsafe_
 
 col1, col2 = st.columns(2)
 
-# 1️⃣ Interface principal
 img_demo = crop_white_borders("smartlog_demo.png")
+img_audit = crop_white_borders("smartlog_auditoria.png")
+img_fraud = crop_white_borders("smartlog_fraude.png")
+img_fire = crop_white_borders("smartlog_firestore_auditoria.png")
+img_web3 = crop_white_borders("smartlog_web3_register.png")
+
 with col1:
     if img_demo:
-        st.image(img_demo, caption="Interface Principal — Simulação do Consenso PoA", use_column_width=True)
-        st.markdown("<p style='color:#444;'>Tela principal mostrando a criação de nós, geração de hashes e execução do consenso distribuído entre validadores.</p>", unsafe_allow_html=True)
+        st.image(img_demo, caption="Interface Principal — Simulação do Consenso PoA")
+    if img_fraud:
+        st.image(img_fraud, caption="Simulação de Ataque e Recuperação de Nós")
 
-# 2️⃣ Auditoria
-img_audit = crop_white_borders("smartlog_auditoria.png")
 with col2:
     if img_audit:
-        st.image(img_audit, caption="Auditoria de Hashes — Antes e Depois", use_column_width=True)
-        st.markdown("<p style='color:#444;'>Processo de auditoria automática comparando os hashes dos nós antes e depois do consenso.</p>", unsafe_allow_html=True)
-
-
-col3, col4 = st.columns(2)
-
-# 3️⃣ Simulação de Fraude
-img_fraud = crop_white_borders("smartlog_fraude.png")
-with col3:
-    if img_fraud:
-        st.image(img_fraud, caption="Simulação de Ataque e Recuperação de Nós", use_column_width=True)
-        st.markdown("<p style='color:#444;'>Demonstra o cenário de corrupção de dados e a recuperação automática por consenso majoritário.</p>", unsafe_allow_html=True)
-# 🔹 Integração Web3 (Simulada)
-img_web3_sim = crop_white_borders("smartlog_fire.png")
-if img_web3_sim:
-    st.image(img_web3_sim, caption="Integração Web3 (Simulada) — Transação do Contrato Inteligente", use_column_width=False)
-    st.markdown("""
-    <p style='color:#444;'>
-    Painel que mostra o envio de uma transação blockchain simulada para o contrato inteligente <b>SmartLogLedger</b>.  
-    Apresenta o endereço do contrato, o hash da transação, o bloco da rede e o status de sucesso, simulando a comunicação com a <b>camada Web3</b>.
-    </p>
-    """, unsafe_allow_html=True)
-
-# 4️⃣ Firestore
-img_fire = crop_white_borders("smartlog_firestore_auditoria.png")
-with col4:
+        st.image(img_audit, caption="Auditoria de Hashes — Antes e Depois")
     if img_fire:
-        st.image(img_fire, caption="Sincronização e Auditoria no Firestore", use_column_width=True)
-        st.markdown("<p style='color:#444;'>Painel que salva, carrega e audita blocos da blockchain diretamente no Firebase Firestore.</p>", unsafe_allow_html=True)
+        st.image(img_fire, caption="Sincronização e Auditoria no Firestore")
 
-# 5️⃣ Web3
-img_web3 = crop_white_borders("smartlog_web3_register.png")
 if img_web3:
-    st.image(img_web3, caption="Registro de Blocos no Contrato SmartLogLedger (Web3)", use_column_width=False)
-    st.markdown("""
-    <p style='color:#444;'>
-    Nesta etapa, o hash validado é enviado ao contrato inteligente <b>SmartLogLedger.sol</b> no Remix Ethereum,  
-    registrando o evento <b>BlockRegistered</b> e garantindo rastreabilidade on-chain.
-    </p>
-    """, unsafe_allow_html=True)
+    st.image(img_web3, caption="Registro de Blocos no Contrato SmartLogLedger (Web3)", use_column_width=True)
 
+st.markdown("<hr>", unsafe_allow_html=True)
 
 # ============================================================
 # 💡 OBJETIVOS
@@ -177,6 +158,7 @@ Ao integrar IA, blockchain e interfaces gráficas, o projeto mostra como a tecno
 **detectar fraudes, corrigir inconsistências e garantir confiabilidade** em processos reais.
 """)
 
+st.markdown("<hr>", unsafe_allow_html=True)
 
 # ============================================================
 # 🧰 TECNOLOGIAS
@@ -190,6 +172,7 @@ st.markdown("""
 - **Machine Learning aplicado à auditoria e consenso**
 """)
 
+st.markdown("<hr>", unsafe_allow_html=True)
 
 # ============================================================
 # 📞 CONTATO
