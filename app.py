@@ -5,13 +5,13 @@ from PIL import Image, ImageChops
 # ⚙️ CONFIGURAÇÃO DA PÁGINA
 # ============================================================
 st.set_page_config(
-    page_title="SmartLog Blockchain — Simulador de Consenso e Fraude",
+    page_title="SmartLog Blockchain — Auditoria, Consenso e Indústria 4.0",
     layout="wide",
     page_icon="💻"
 )
 
 # ============================================================
-# 🎨 ESTILO — Títulos centralizados + parágrafos à esquerda
+# 🎨 ESTILO PROFISSIONAL — TUDO CENTRALIZADO
 # ============================================================
 st.markdown("""
 <style>
@@ -21,14 +21,9 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Títulos (mas usaremos inline também para garantir o alinhamento) */
-h1, h2, h3, h4 {
-    font-weight: 600;
-}
-
-/* Parágrafos padrão à esquerda */
-p {
-    text-align: left;
+/* Centralizar TUDO */
+h1, h2, h3, h4, p, li, ul {
+    text-align: center !important;
 }
 
 /* Links */
@@ -48,14 +43,13 @@ img {
     margin-bottom: 1.5rem;
 }
 
-/* Linha */
+/* Separador */
 hr {
     border: 1px solid #eee;
     margin: 2rem 0;
 }
 </style>
 """, unsafe_allow_html=True)
-
 
 # ============================================================
 # 🧩 FUNÇÃO — CORTAR BORDAS BRANCAS
@@ -75,63 +69,57 @@ def crop_white_borders(img_path, base_width=600):
     except:
         return None
 
-
 # ============================================================
-# 🧠 CABEÇALHO PRINCIPAL (centralizado corretamente)
+# 🧠 CABEÇALHO PRINCIPAL
 # ============================================================
-st.markdown("<h1 style='color:#2D8CFF; text-align:center;'>SmartLog Blockchain</h1>", unsafe_allow_html=True)
-st.markdown("<h4 style='color:#FF6F61; text-align:center;'>Simulador de Consenso e Detecção de Fraude — Proof of Authority (PoA)</h4>", unsafe_allow_html=True)
+st.markdown("<h1 style='color:#2D8CFF;'>SmartLog Blockchain</h1>", unsafe_allow_html=True)
+st.markdown("<h4 style='color:#FF6F61;'>Simulador de Consenso, Auditoria e Blockchain para Indústria 4.0</h4>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 
-
 # ============================================================
-# 👨‍💻 SOBRE O DESENVOLVEDOR
+# 👨‍💻 SOBRE O PROJETO
 # ============================================================
-st.markdown("<h2 style='text-align:center;'>Sobre o Desenvolvedor</h2>", unsafe_allow_html=True)
 st.markdown("""
-Sou **estudante e desenvolvedor na área de Inteligência Artificial aplicada (Machine Learning)**,  
-atuando em **projetos de IA Educacional, FinTech e Blockchain Inteligente**.
+### Sobre o Projeto  
+O **SmartLog Blockchain** é uma ferramenta educacional e técnica desenvolvida para demonstrar, de forma visual,  
+como tecnologias modernas como **Blockchain, auditoria automática, Web3 e sistemas distribuídos** podem ser aplicadas a:
 
-Durante o curso de **Machine Learning**, desenvolvo **protótipos funcionais** que conectam IA e sistemas reais,  
-utilizando **Streamlit, Firebase, TensorFlow, Web3 e Scikit-Learn**.
-
-O **SmartLog Blockchain** é um aplicativo educacional e técnico que demonstra como IA e Blockchain  
-podem ser aplicadas em **sistemas logísticos e auditorias descentralizadas**, simulando fraudes, consenso e recuperação de dados.
+- Logística inteligente  
+- Cadeias de suprimentos complexas  
+- Rastreabilidade ponta a ponta  
+- Automação e integração de dados  
+- Processos descentralizados  
+- Aplicações reais da **Indústria 4.0**  
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
-
 # ============================================================
-# 🚀 SOBRE O PROJETO
+# 🚀 SOBRE O SMARTLOG BLOCKCHAIN
 # ============================================================
-st.markdown("<h2 style='color:#2D8CFF; text-align:center;'>O que é o SmartLog Blockchain</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='color:#2D8CFF;'>O que é o SmartLog Blockchain</h2>", unsafe_allow_html=True)
 st.markdown("""
-O **SmartLog Blockchain** é um simulador **visual e interativo** do consenso **Proof-of-Authority (PoA)**,
-um modelo utilizado em redes privadas que exige validadores confiáveis.
+O simulador representa uma rede permissionada baseada no consenso **Proof-of-Authority (PoA)**,  
+comumente utilizado em indústrias e sistemas que exigem **alta confiabilidade e auditabilidade**.
 
-Com o simulador é possível:
+Ele permite visualizar:
 
-- Criar uma blockchain de entregas em tempo real;  
-- Simular o consenso entre nós validadores;  
-- Executar testes de **fraude e recuperação automática**;  
-- Integrar com **Web3** para registro descentralizado;  
-- Conectar com **Firestore** para auditoria e rastreabilidade em nuvem.
-
-Uma ferramenta ideal para aprender e demonstrar como blockchain reforça **segurança, rastreamento e auditoria digital**.
+- Validação de blocos por nós autorizados  
+- Checagem de integridade via hashes  
+- Simulação de ataques e recuperação automática  
+- Auditoria distribuída com Firestore  
+- Registro descentralizado em redes Web3  
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
-
 # ============================================================
-# 🖼️ ETAPAS DO PROJETO (TODAS AS IMAGENS)
+# 🖼️ ETAPAS VISUAIS
 # ============================================================
-st.markdown("<h2 style='color:#4B7BE5; text-align:center;'>Etapas Visuais do Projeto</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='color:#4B7BE5;'>Etapas Visuais do Projeto</h2>", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
-# Carregar imagens
 img_demo = crop_white_borders("smartlog_demo.png")
 img_audit = crop_white_borders("smartlog_auditoria.png")
 img_fraud = crop_white_borders("smartlog_fraude.png")
@@ -139,94 +127,61 @@ img_fire = crop_white_borders("smartlog_firestore_auditoria.png")
 img_web3 = crop_white_borders("smartlog_web3_register.png")
 img_web3_explain = crop_white_borders("smartlog_fire.png")
 
-
 with col1:
     if img_demo:
-        st.image(img_demo, caption="Interface Principal — Simulação do Consenso PoA")
-
+        st.image(img_demo, caption="Consenso PoA — Formação e Validação de Blocos")
     if img_fraud:
-        st.image(
-            img_fraud,
-            caption=(
-                "Simulação de Fraude — Um bloco adulterado quebra a integridade da cadeia. "
-                "A blockchain detecta automaticamente inconsistências e identifica o ponto exato do ataque."
-            )
-        )
-
+        st.image(img_fraud, caption="Simulação de Ataques e Recuperação Automática")
 
 with col2:
     if img_audit:
-        st.image(img_audit, caption="Auditoria de Hashes — Verificação Antes e Depois")
-
+        st.image(img_audit, caption="Auditoria de Hashes — Checagem de Integridade")
     if img_fire:
-        st.image(img_fire, caption="Sincronização e Auditoria no Firestore")
-
+        st.image(img_fire, caption="Sincronização com Firestore — Pipeline Distribuído")
 
 if img_web3:
-    st.image(
-        img_web3,
-        caption="Registro de Blocos no Contrato SmartLogLedger (Web3)",
-        use_column_width=True
-    )
+    st.image(img_web3, caption="Registro de Blocos em Web3 — Integração para Indústria 4.0", use_column_width=True)
 
-# Explicação extra Web3
 if img_web3_explain:
     st.image(
         img_web3_explain,
         caption=(
-            "Arquitetura Web3 — Explica como carteiras digitais, transações assinadas e contratos inteligentes "
-            "trabalham juntos para registrar eventos de forma descentralizada e segura."
+            "Arquitetura Web3 — Como contratos inteligentes, carteiras digitais e "
+            "transações assinadas registram eventos logísticos com segurança."
         ),
         use_column_width=True
     )
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
-
 # ============================================================
-# 💡 OBJETIVOS
+# 💡 OBJETIVOS E IMPACTO
 # ============================================================
-st.markdown("<h2 style='color:#06D6A0; text-align:center;'>Objetivos e Impacto</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='color:#06D6A0;'>Objetivos e Impacto</h2>", unsafe_allow_html=True)
 st.markdown("""
-O **SmartLog Blockchain** demonstra como blockchain pode ser usada em:
+O **SmartLog Blockchain** demonstra como tecnologias emergentes podem melhorar:  
 
-- Logística inteligente  
-- Auditoria automatizada  
-- Rastreabilidade confiável  
-- Deteção de fraudes e inconsistências  
-- Transparência e governança digital  
+- Auditoria contínua  
+- Rastreabilidade  
+- Prevenção de fraudes  
+- Governança digital  
+- Automação e transparência  
 
-Ao integrar IA, blockchain e cloud, o projeto mostra como tecnologias modernas  
-podem proteger dados e aumentar a confiabilidade de sistemas reais.
+Aplicações diretas para **Indústria 4.0**, IoT e rastreamento inteligente.
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
-
 
 # ============================================================
 # 🧰 TECNOLOGIAS
 # ============================================================
-st.markdown("<h2 style='color:#F4A261; text-align:center;'>Tecnologias Utilizadas</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='color:#F4A261;'>Tecnologias Utilizadas</h2>", unsafe_allow_html=True)
 st.markdown("""
-- **Python** · Streamlit · Pandas · Hashlib · Requests  
-- **Blockchain Simulada (PoA)**  
-- **Firebase Firestore** — Auditoria em nuvem  
-- **Web3 / Remix Ethereum** — Registro descentralizado  
-- **Machine Learning aplicado à auditoria**
+- Python · Streamlit · Pandas  
+- Blockchain (PoA)  
+- Firebase Firestore  
+- Web3, Contratos Inteligentes  
+- Soluções para Indústria 4.0  
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
-
-
-# ============================================================
-# 📞 CONTATO
-# ============================================================
-st.markdown("""
-<h3 style='text-align:center; color:#2D8CFF;'>Contato</h3>
-<p style='text-align:center;'>
-    <b>E-mail:</b> <a href='mailto:claudio.y@hotmail.com'>claudio.y@hotmail.com</a><br>
-    <b>WhatsApp:</b> <a href='https://wa.me/5511986364794' target='_blank'>(11) 98636-4794</a>
-</p>
-""", unsafe_allow_html=True)
-
-st.caption("© 2025 SmartLog Blockchain — Desenvolvido por Claudio Hideki Yoshida | Simulador de Consenso e Fraude (PoA)")
