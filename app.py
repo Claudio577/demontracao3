@@ -217,7 +217,3 @@ st.markdown("""
 """)
 
 st.markdown("<br><br><br>", unsafe_allow_html=True) # Espaço final para melhor acabamento
-""")
-
-st.markdown("<hr>", unsafe_allow_html=True)
-
