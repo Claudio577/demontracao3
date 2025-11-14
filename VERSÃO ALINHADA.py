@@ -10,43 +10,6 @@ st.set_page_config(
     page_icon="💻"
 )
 
-# ============================================================
-# 🎨 ESTILO PROFISSIONAL E CENTRALIZADO
-# ============================================================
-st.markdown("""
-<style>
-body {
-    background-color: #f8f9fb;
-    color: #222;
-    font-family: 'Poppins', sans-serif;
-}
-h1, h2, h3, h4 {
-    font-weight: 600;
-    text-align: center;
-}
-p {
-    text-align: justify;
-}
-a {
-    color: #2D8CFF !important;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-img {
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-}
-hr {
-    border: 1px solid #eee;
-    margin: 2rem 0;
-}
-</style>
-""", unsafe_allow_html=True)
-
 
 # ============================================================
 # 🧩 FUNÇÃO AUXILIAR — CORTAR BORDAS BRANCAS
