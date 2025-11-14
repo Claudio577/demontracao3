@@ -79,18 +79,18 @@ st.markdown("<hr>", unsafe_allow_html=True)
 # ============================================================
 st.markdown("""
 ### Sobre o Projeto  
-O **SmartLog Blockchain** é uma ferramenta educacional e técnica desenvolvida para demonstrar, de forma clara e visual,  
-como tecnologias modernas como **Blockchain, auditoria automática, análise distribuída e Web3** podem ser aplicadas em:
+O **SmartLog Blockchain** é uma ferramenta educacional e técnica desenvolvida para demonstrar, de forma visual,  
+como tecnologias modernas como **Blockchain, auditoria automática, Web3 e análise distribuída** podem ser aplicadas a:
 
 - Logística inteligente  
-- Cadeias de suprimentos automatizadas  
-- Rastreabilidade avançada  
-- Sistemas críticos da **Indústria 4.0**  
-- Auditoria de integridade de dados  
+- Cadeias de suprimentos complexas  
+- Rastreabilidade ponta a ponta  
+- Automação e integração de dados  
 - Processos descentralizados  
+- Sistemas avançados da **Indústria 4.0**  
 
-O projeto foi criado com foco em inovação tecnológica aplicada, conectando **conceitos teóricos** com **sistemas reais**,  
-podendo ser utilizado para ensino, demonstração, consultoria técnica ou prova de conceito.
+O objetivo é conectar **conceitos teóricos** com **implementações reais**, permitindo que estudantes, profissionais  
+e empresas compreendam como essas tecnologias podem melhorar segurança, transparência e eficiência operacional.
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
@@ -100,19 +100,19 @@ st.markdown("<hr>", unsafe_allow_html=True)
 # ============================================================
 st.markdown("<h2 style='color:#2D8CFF;'>O que é o SmartLog Blockchain</h2>", unsafe_allow_html=True)
 st.markdown("""
-O **SmartLog Blockchain** simula uma rede baseada no mecanismo de consenso **Proof-of-Authority (PoA)**,  
-usado em redes permissionadas e ambientes industriais que exigem **alta confiabilidade e auditoria rápida**.
+O **SmartLog Blockchain** simula uma rede permissionada baseada no consenso **Proof-of-Authority (PoA)**,  
+usado em ambientes industriais e corporativos que exigem **alta confiabilidade, rastreabilidade e auditoria rápida**.
 
-Ele permite visualizar:
+A solução permite que o usuário visualize:
 
-- O comportamento dos **nós validadores**  
-- A criação de blocos logísticos em tempo real  
-- A checagem de integridade via **hashes e auditorias automáticas**  
-- Ataques simulados e processos de **recuperação de inconsistências**  
-- A interação com **Firestore** e **redes Web3**, refletindo pipelines de dados reais da Indústria 4.0  
+- A validação de blocos por **nós validadores**  
+- A formação de cadeias logísticas auditáveis  
+- A checagem de integridade por **hashes criptográficos**  
+- A simulação de ataques e recuperação de dados  
+- Integração com **Firestore** para auditoria distribuída  
+- Registro de blocos em **Web3** e contratos inteligentes  
 
-O objetivo é demonstrar como Blockchain pode trazer **transparência, segurança e rastreabilidade**  
-para sistemas logísticos e industriais.
+O simulador mostra na prática como Blockchain reforça a confiança em sistemas críticos da Indústria 4.0.
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
@@ -129,6 +129,8 @@ img_audit = crop_white_borders("smartlog_auditoria.png")
 img_fraud = crop_white_borders("smartlog_fraude.png")
 img_fire = crop_white_borders("smartlog_firestore_auditoria.png")
 img_web3 = crop_white_borders("smartlog_web3_register.png")
+img_web3_explain = crop_white_borders("smartlog_fire.png")  # NOVA IMAGEM
+
 
 with col1:
     if img_demo:
@@ -136,14 +138,38 @@ with col1:
     if img_fraud:
         st.image(img_fraud, caption="Simulação de Ataques e Recuperação Automática")
 
+
 with col2:
     if img_audit:
         st.image(img_audit, caption="Auditoria de Hashes — Checagem de Integridade")
     if img_fire:
         st.image(img_fire, caption="Sincronização com Firestore — Pipeline Distribuído")
 
+
 if img_web3:
-    st.image(img_web3, caption="Registro de Blocos em Rede Web3 — Integração para Indústria 4.0", use_column_width=True)
+    st.image(
+        img_web3,
+        caption="Registro de Blocos em Rede Web3 — Integração Blockchain para Indústria 4.0",
+        use_column_width=True
+    )
+
+
+# ============================================================
+# NOVA IMAGEM: EXPLICAÇÃO DA ARQUITETURA WEB3
+# ============================================================
+if img_web3_explain:
+    st.image(
+        img_web3_explain,
+        caption=(
+            "Arquitetura Web3 — Funcionamento da Comunicação Descentralizada: "
+            "Esta visualização explica como carteiras digitais, transações assinadas "
+            "criptograficamente e contratos inteligentes interagem para registrar eventos "
+            "logísticos com segurança. "
+            "Esse modelo serve como base para soluções de rastreabilidade, IoT industrial, "
+            "automação e cadeias de suprimentos inteligentes dentro do ecossistema da Indústria 4.0."
+        ),
+        use_column_width=True
+    )
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
@@ -152,16 +178,18 @@ st.markdown("<hr>", unsafe_allow_html=True)
 # ============================================================
 st.markdown("<h2 style='color:#06D6A0;'>Objetivos e Impacto</h2>", unsafe_allow_html=True)
 st.markdown("""
-O projeto demonstra como **Blockchain e sistemas distribuídos** podem:
+O **SmartLog Blockchain** demonstra como tecnologias modernas podem fortalecer processos logísticos e industriais,  
+garantindo **segurança, transparência, rastreabilidade e automação inteligente**.
 
-- Aumentar a confiança em processos logísticos  
-- Melhorar rastreabilidade ponta a ponta  
-- Automatizar auditorias de integridade  
-- Integrar múltiplas fontes de dados  
-- Prevenir fraudes e anomalias  
-- Servir como base tecnológica para **Indústria 4.0**, IoT e automação avançada  
+A solução permite:
+- Auditoria contínua de integridade  
+- Detecção de fraudes e anomalias  
+- Integração entre sistemas heterogêneos  
+- Rastreabilidade ponta a ponta  
+- Governança digital baseada em dados  
+- Aplicações diretas para **Indústria 4.0**, IoT e automação industrial  
 
-O SmartLog é uma ferramenta prática para capacitação, pesquisa e desenvolvimento de soluções reais.
+É uma ferramenta ideal para ensino, pesquisa, inovação e desenvolvimento de soluções reais.
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
@@ -172,10 +200,10 @@ st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<h2 style='color:#F4A261;'>Tecnologias Utilizadas</h2>", unsafe_allow_html=True)
 st.markdown("""
 - **Python** · Streamlit · Pandas · Hashlib · Requests  
-- **Blockchain (PoA)** — Simulação de rede permissionada  
-- **Firebase Firestore** — Sincronização e auditoria distribuída  
-- **Web3 / Remix Ethereum** — Registro descentralizado  
-- **Automação e Integridade de Dados para Indústria 4.0**
+- **Blockchain (PoA)** — Rede permissionada simulada  
+- **Firebase Firestore** — Auditoria e sincronização distribuída  
+- **Web3 / Contratos Inteligentes** — Registro descentralizado  
+- **Governança e Automação para Indústria 4.0**
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
