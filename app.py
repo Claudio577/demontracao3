@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # ============================================================
-# 🎨 ESTILO PROFISSIONAL — TUDO CENTRALIZADO
+# 🎨 ESTILO PROFISSIONAL — TÍTULOS CENTRALIZADOS + TEXTO À ESQUERDA
 # ============================================================
 st.markdown("""
 <style>
@@ -21,9 +21,18 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Centralizar TUDO */
-h1, h2, h3, h4, p, li, ul {
+/* TITULOS CENTRALIZADOS */
+h1, h2, h3, h4 {
+    font-weight: 600;
     text-align: center !important;
+}
+
+/* PARÁGRAFOS E LISTAS À ESQUERDA */
+p, li, ul {
+    text-align: left !important;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px; /* EVITA TEXTO MUITO LARGO, FICA PREMIUM */
 }
 
 /* Links */
@@ -46,15 +55,16 @@ img {
 /* Separador */
 hr {
     border: 1px solid #eee;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
 }
 </style>
 """, unsafe_allow_html=True)
 
+
 # ============================================================
 # 🧩 FUNÇÃO — CORTAR BORDAS BRANCAS
 # ============================================================
-def crop_white_borders(img_path, base_width=600):
+def crop_white_borders(img_path, base_width=650):
     try:
         img = Image.open(img_path)
         bg = Image.new(img.mode, img.size, img.getpixel((0, 0)))
@@ -69,52 +79,59 @@ def crop_white_borders(img_path, base_width=600):
     except:
         return None
 
+
 # ============================================================
 # 🧠 CABEÇALHO PRINCIPAL
 # ============================================================
 st.markdown("<h1 style='color:#2D8CFF;'>SmartLog Blockchain</h1>", unsafe_allow_html=True)
 st.markdown("<h4 style='color:#FF6F61;'>Simulador de Consenso, Auditoria e Blockchain para Indústria 4.0</h4>", unsafe_allow_html=True)
+
 st.markdown("<hr>", unsafe_allow_html=True)
+
 
 # ============================================================
 # 👨‍💻 SOBRE O PROJETO
 # ============================================================
+st.markdown("<h2>Sobre o Projeto</h2>", unsafe_allow_html=True)
+
 st.markdown("""
-### Sobre o Projeto  
 O **SmartLog Blockchain** é uma ferramenta educacional e técnica desenvolvida para demonstrar, de forma visual,  
-como tecnologias modernas como **Blockchain, auditoria automática, Web3 e sistemas distribuídos** podem ser aplicadas a:
+como tecnologias modernas como **Blockchain, auditoria automática, Web3 e sistemas distribuídos** podem ser aplicadas em:
 
 - Logística inteligente  
 - Cadeias de suprimentos complexas  
 - Rastreabilidade ponta a ponta  
 - Automação e integração de dados  
 - Processos descentralizados  
-- Aplicações reais da **Indústria 4.0**  
+- Aplicações reais da **Indústria 4.0**
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
+
 
 # ============================================================
 # 🚀 SOBRE O SMARTLOG BLOCKCHAIN
 # ============================================================
 st.markdown("<h2 style='color:#2D8CFF;'>O que é o SmartLog Blockchain</h2>", unsafe_allow_html=True)
+
 st.markdown("""
 O simulador representa uma rede permissionada baseada no consenso **Proof-of-Authority (PoA)**,  
-comumente utilizado em indústrias e sistemas que exigem **alta confiabilidade e auditabilidade**.
+utilizado em ambientes industriais e logísticos que exigem **alta confiabilidade, segurança e auditoria automática**.
 
 Ele permite visualizar:
 
 - Validação de blocos por nós autorizados  
-- Checagem de integridade via hashes  
-- Simulação de ataques e recuperação automática  
+- Hashes de integridade  
+- Simulações de ataques e recuperação automática  
 - Auditoria distribuída com Firestore  
-- Registro descentralizado em redes Web3  
+- Registro descentralizado usando **Web3** e contratos inteligentes  
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
+
 # ============================================================
-# 🖼️ ETAPAS VISUAIS
+# 🖼️ ETAPAS VISUAIS DO PROJETO
 # ============================================================
 st.markdown("<h2 style='color:#4B7BE5;'>Etapas Visuais do Projeto</h2>", unsafe_allow_html=True)
 
@@ -130,58 +147,69 @@ img_web3_explain = crop_white_borders("smartlog_fire.png")
 with col1:
     if img_demo:
         st.image(img_demo, caption="Consenso PoA — Formação e Validação de Blocos")
+
     if img_fraud:
-        st.image(img_fraud, caption="Simulação de Ataques e Recuperação Automática")
+        st.image(
+            img_fraud,
+            caption="Simulação de Ataques — Detecção e recuperação automática de inconsistências."
+        )
 
 with col2:
     if img_audit:
-        st.image(img_audit, caption="Auditoria de Hashes — Checagem de Integridade")
+        st.image(img_audit, caption="Auditoria de Hashes — Antes e Depois")
+
     if img_fire:
-        st.image(img_fire, caption="Sincronização com Firestore — Pipeline Distribuído")
+        st.image(img_fire, caption="Sincronização com Firestore — Auditoria distribuída")
 
 if img_web3:
-    st.image(img_web3, caption="Registro de Blocos em Web3 — Integração para Indústria 4.0", use_column_width=True)
+    st.image(
+        img_web3,
+        caption="Registro de Blocos em Web3 — Integração Blockchain para Indústria 4.0",
+        use_column_width=True
+    )
 
 if img_web3_explain:
     st.image(
         img_web3_explain,
-        caption=(
-            "Arquitetura Web3 — Como contratos inteligentes, carteiras digitais e "
-            "transações assinadas registram eventos logísticos com segurança."
-        ),
+        caption="Arquitetura Web3 — Como contratos inteligentes registram eventos com segurança.",
         use_column_width=True
     )
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
+
 # ============================================================
 # 💡 OBJETIVOS E IMPACTO
 # ============================================================
 st.markdown("<h2 style='color:#06D6A0;'>Objetivos e Impacto</h2>", unsafe_allow_html=True)
+
 st.markdown("""
-O **SmartLog Blockchain** demonstra como tecnologias emergentes podem melhorar:  
+O SmartLog Blockchain demonstra, na prática, como tecnologias emergentes fortalecem:
 
 - Auditoria contínua  
-- Rastreabilidade  
-- Prevenção de fraudes  
+- Rastreabilidade confiável  
+- Detecção de fraudes  
 - Governança digital  
-- Automação e transparência  
+- Automação na **Indústria 4.0**  
 
-Aplicações diretas para **Indústria 4.0**, IoT e rastreamento inteligente.
+É ideal para ensino, pesquisa, inovação e experimentação.
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
+
 
 # ============================================================
 # 🧰 TECNOLOGIAS
 # ============================================================
 st.markdown("<h2 style='color:#F4A261;'>Tecnologias Utilizadas</h2>", unsafe_allow_html=True)
+
 st.markdown("""
-- Python · Streamlit · Pandas  
-- Blockchain (PoA)  
+- Python — Streamlit — Pandas — Hashlib  
+- Blockchain (PoA) — Auditoria distribuída  
 - Firebase Firestore  
-- Web3, Contratos Inteligentes  
+- Web3 · Contratos Inteligentes  
 - Soluções para Indústria 4.0  
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
+
