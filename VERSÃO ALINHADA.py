@@ -5,7 +5,7 @@ from PIL import Image, ImageChops
 # ⚙️ CONFIGURAÇÃO DA PÁGINA
 # ============================================================
 st.set_page_config(
-    page_title="SmartLog Blockchain — Inovação IA-Labs",
+    page_title="SmartLog Blockchain — Auditoria, Consenso e Indústria 4.0",
     layout="wide",
     page_icon="💻"
 )
@@ -70,53 +70,55 @@ def crop_white_borders(img_path, base_width=600):
 # ============================================================
 # 🧠 CABEÇALHO PRINCIPAL
 # ============================================================
-st.markdown("<h1 style='color:#2D8CFF;'>SmartLog Blockchain — IA-Labs</h1>", unsafe_allow_html=True)
-st.markdown("<h4 style='color:#FF6F61;'>Simulador de Consenso, Auditoria e Governança de Dados</h4>", unsafe_allow_html=True)
+st.markdown("<h1 style='color:#2D8CFF;'>SmartLog Blockchain</h1>", unsafe_allow_html=True)
+st.markdown("<h4 style='color:#FF6F61;'>Simulador de Consenso, Auditoria e Blockchain para Indústria 4.0</h4>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 
 # ============================================================
-# 👨‍💻 SOBRE O IA-LABS / DESENVOLVEDOR
+# 👨‍💻 SOBRE O DESENVOLVEDOR
 # ============================================================
 st.markdown("""
-### Sobre o IA-Labs  
-O **IA-Labs** é um laboratório nacional de **política pública orientada por dados**, parceiro estratégico de governos e organizações que buscam **inovação social, transformação digital e impacto real**.
+### Sobre o Projeto  
+O **SmartLog Blockchain** é uma ferramenta educacional e técnica desenvolvida para demonstrar, de forma clara e visual,  
+como tecnologias modernas como **Blockchain, auditoria automática, análise distribuída e Web3** podem ser aplicadas em:
 
-Nossa atuação abrange:
-- Educação  
-- Saúde  
-- Indústria 4.0  
-- Segurança Nacional  
-- Defesa Tecnológica  
-- Gestão Pública  
+- Logística inteligente  
+- Cadeias de suprimentos automatizadas  
+- Rastreabilidade avançada  
+- Sistemas críticos da **Indústria 4.0**  
+- Auditoria de integridade de dados  
+- Processos descentralizados  
 
-Combinamos **Inteligência Artificial**, engenharia de dados e metodologias ágeis para criar soluções que geram **transparência, eficiência e governança** em grande escala.
-
-O **SmartLog Blockchain** faz parte de um conjunto de ferramentas e protótipos que ilustram como tecnologias emergentes podem apoiar decisões públicas e aprimorar auditorias e sistemas críticos.
+O projeto foi criado com foco em inovação tecnológica aplicada, conectando **conceitos teóricos** com **sistemas reais**,  
+podendo ser utilizado para ensino, demonstração, consultoria técnica ou prova de conceito.
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
 # ============================================================
-# 🚀 SOBRE O PROJETO — VERSÃO IA-LABS
+# 🚀 SOBRE O SMARTLOG BLOCKCHAIN
 # ============================================================
 st.markdown("<h2 style='color:#2D8CFF;'>O que é o SmartLog Blockchain</h2>", unsafe_allow_html=True)
 st.markdown("""
-O **SmartLog Blockchain** é um **simulador visual e técnico** que demonstra como **Blockchain, IA e análise distribuída**  
-podem ser aplicadas a políticas públicas, logística, auditoria e governança digital.
+O **SmartLog Blockchain** simula uma rede baseada no mecanismo de consenso **Proof-of-Authority (PoA)**,  
+usado em redes permissionadas e ambientes industriais que exigem **alta confiabilidade e auditoria rápida**.
 
-Ele reflete os valores do **IA-Labs**, proporcionando:
-- **Visão unificada de dados**, mesmo quando originados de sistemas diferentes;  
-- **Análises rápidas**, graças à arquitetura paralela e validadores independentes;  
-- **Integração total**, conectando blocos, redes Web3 e bancos em nuvem;  
-- **Detecção e correção automática de inconsistências**, reforçando a confiança do processo.
+Ele permite visualizar:
 
-Assim como nas soluções reais desenvolvidas pelo IA-Labs, o foco está em **transparência, integridade e impacto prático**.
+- O comportamento dos **nós validadores**  
+- A criação de blocos logísticos em tempo real  
+- A checagem de integridade via **hashes e auditorias automáticas**  
+- Ataques simulados e processos de **recuperação de inconsistências**  
+- A interação com **Firestore** e **redes Web3**, refletindo pipelines de dados reais da Indústria 4.0  
+
+O objetivo é demonstrar como Blockchain pode trazer **transparência, segurança e rastreabilidade**  
+para sistemas logísticos e industriais.
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
 # ============================================================
-# 🖼️ ETAPAS DO PROJETO — VERSÃO IA-LABS
+# 🖼️ ETAPAS DO PROJETO
 # ============================================================
 st.markdown("<h2 style='color:#4B7BE5;'>Etapas Visuais do Projeto</h2>", unsafe_allow_html=True)
 
@@ -130,37 +132,36 @@ img_web3 = crop_white_borders("smartlog_web3_register.png")
 
 with col1:
     if img_demo:
-        st.image(img_demo, caption="Simulação do Consenso PoA — Integridade e Governança")
+        st.image(img_demo, caption="Consenso PoA — Formação e Validação de Blocos")
     if img_fraud:
-        st.image(img_fraud, caption="Detecção de Inconsistências e Recuperação — Transparência Total")
+        st.image(img_fraud, caption="Simulação de Ataques e Recuperação Automática")
 
 with col2:
     if img_audit:
-        st.image(img_audit, caption="Auditoria de Hashes — Validação Antes/Depois")
+        st.image(img_audit, caption="Auditoria de Hashes — Checagem de Integridade")
     if img_fire:
-        st.image(img_fire, caption="Sincronização em Nuvem — Integração com Firestore")
+        st.image(img_fire, caption="Sincronização com Firestore — Pipeline Distribuído")
 
 if img_web3:
-    st.image(img_web3, caption="Registro Descentralizado no Contrato SmartLogLedger (Web3)", use_column_width=True)
+    st.image(img_web3, caption="Registro de Blocos em Rede Web3 — Integração para Indústria 4.0", use_column_width=True)
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
 # ============================================================
-# 💡 OBJETIVOS E IMPACTO — VERSÃO IA-LABS
+# 💡 OBJETIVOS E IMPACTO
 # ============================================================
 st.markdown("<h2 style='color:#06D6A0;'>Objetivos e Impacto</h2>", unsafe_allow_html=True)
 st.markdown("""
-O **SmartLog Blockchain** demonstra como tecnologias emergentes podem fortalecer sistemas de interesse público,  
-garantindo **transparência, auditoria, rastreabilidade e segurança**.
+O projeto demonstra como **Blockchain e sistemas distribuídos** podem:
 
-A solução apoia:
-- Políticas públicas baseadas em dados;  
-- Auditoria e prestação de contas;  
-- Detecção precoce de fraudes;  
-- Integração entre órgãos e serviços;  
-- Automação e governança digital.
+- Aumentar a confiança em processos logísticos  
+- Melhorar rastreabilidade ponta a ponta  
+- Automatizar auditorias de integridade  
+- Integrar múltiplas fontes de dados  
+- Prevenir fraudes e anomalias  
+- Servir como base tecnológica para **Indústria 4.0**, IoT e automação avançada  
 
-É um exemplo de como o IA-Labs promove **inovação com impacto social**, sempre com foco em **dados confiáveis e decisões inteligentes**.
+O SmartLog é uma ferramenta prática para capacitação, pesquisa e desenvolvimento de soluções reais.
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
@@ -171,10 +172,10 @@ st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<h2 style='color:#F4A261;'>Tecnologias Utilizadas</h2>", unsafe_allow_html=True)
 st.markdown("""
 - **Python** · Streamlit · Pandas · Hashlib · Requests  
-- **Blockchain (PoA)** — arquitetura distribuída  
-- **Firebase Firestore** — armazenamento e auditoria  
-- **Web3 / Remix Ethereum** — registro descentralizado  
-- **Técnicas de IA e Governança de Dados**
+- **Blockchain (PoA)** — Simulação de rede permissionada  
+- **Firebase Firestore** — Sincronização e auditoria distribuída  
+- **Web3 / Remix Ethereum** — Registro descentralizado  
+- **Automação e Integridade de Dados para Indústria 4.0**
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
