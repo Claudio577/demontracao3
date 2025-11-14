@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # ============================================================
-# 🎨 ESTILO PROFISSIONAL E CENTRALIZADO
+# 🎨 ESTILO PROFISSIONAL (Títulos centralizados + texto à esquerda)
 # ============================================================
 st.markdown("""
 <style>
@@ -25,7 +25,7 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 p {
-    text-align: justify;
+    text-align: left;
 }
 a {
     color: #2D8CFF !important;
@@ -100,13 +100,13 @@ O **SmartLog Blockchain** é um **simulador visual e interativo** do mecanismo d
 utilizado em **redes privadas e logísticas**.
 
 Ele permite que estudantes e profissionais **visualizem e compreendam** o funcionamento de uma rede blockchain,  
-onde **nós validadores** registram, auditam e sincronizam eventos logísticos, como entregas e rastreamentos.
+onde **nós validadores** registram, auditam e sincronizam eventos logísticos.
 
 Com ele, é possível:
 - Criar uma **blockchain de entregas** em tempo real;  
 - Simular o **consenso entre nós validadores**;  
-- Realizar **testes de fraude e recuperação automática de blocos**;  
-- Conectar-se a sistemas **Web3 e Firestore** para armazenamento em nuvem.
+- Executar **testes de fraude e recuperação automática de blocos**;  
+- Integrar com **Web3 e Firestore** para armazenamento em nuvem e auditoria.
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
@@ -123,6 +123,7 @@ img_audit = crop_white_borders("smartlog_auditoria.png")
 img_fraud = crop_white_borders("smartlog_fraude.png")
 img_fire = crop_white_borders("smartlog_firestore_auditoria.png")
 img_web3 = crop_white_borders("smartlog_web3_register.png")
+img_web3_explain = crop_white_borders("smartlog_fire.png")   # NOVA IMAGEM AQUI!
 
 with col1:
     if img_demo:
@@ -138,6 +139,21 @@ with col2:
 
 if img_web3:
     st.image(img_web3, caption="Registro de Blocos no Contrato SmartLogLedger (Web3)", use_column_width=True)
+
+# ============================================================
+# 🆕 IMAGEM EXTRA — EXPLICAÇÃO SOBRE WEB3
+# ============================================================
+if img_web3_explain:
+    st.image(
+        img_web3_explain,
+        caption=(
+            "Arquitetura Web3 — Explicação visual de como contratos inteligentes, "
+            "carteiras digitais e transações assinadas registram eventos com segurança. "
+            "Esse fluxo demonstra os elementos essenciais da Web3 usados para auditoria, "
+            "rastreabilidade e integração com sistemas blockchain."
+        ),
+        use_column_width=True
+    )
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
@@ -166,10 +182,10 @@ st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<h2 style='color:#F4A261;'>Tecnologias Utilizadas</h2>", unsafe_allow_html=True)
 st.markdown("""
 - **Python** · Streamlit · Pandas · Hashlib · Requests  
-- **Blockchain Simulada (PoA)** com nós independentes  
-- **Firebase Firestore** — armazenamento em nuvem  
+- **Blockchain Simulada (PoA)**  
+- **Firebase Firestore** — armazenamento e auditoria  
 - **Web3 / Remix Ethereum** — integração educacional  
-- **Machine Learning aplicado à auditoria e consenso**
+- **Machine Learning aplicado à auditoria**
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
