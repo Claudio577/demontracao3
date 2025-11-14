@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # ============================================================
-# 🎨 ESTILO — Títulos centralizados + texto à esquerda
+# 🎨 ESTILO — Títulos centralizados + parágrafos à esquerda
 # ============================================================
 st.markdown("""
 <style>
@@ -21,13 +21,12 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Títulos */
+/* Títulos (mas usaremos inline também para garantir o alinhamento) */
 h1, h2, h3, h4 {
     font-weight: 600;
-    text-align: center;
 }
 
-/* Parágrafos */
+/* Parágrafos padrão à esquerda */
 p {
     text-align: left;
 }
@@ -49,7 +48,7 @@ img {
     margin-bottom: 1.5rem;
 }
 
-/* Linha divisória */
+/* Linha */
 hr {
     border: 1px solid #eee;
     margin: 2rem 0;
@@ -78,44 +77,46 @@ def crop_white_borders(img_path, base_width=600):
 
 
 # ============================================================
-# 🧠 CABEÇALHO PRINCIPAL
+# 🧠 CABEÇALHO PRINCIPAL (centralizado corretamente)
 # ============================================================
-st.markdown("<h1 style='color:#2D8CFF;'>SmartLog Blockchain</h1>", unsafe_allow_html=True)
-st.markdown("<h4 style='color:#FF6F61;'>Simulador de Consenso e Detecção de Fraude — Proof of Authority (PoA)</h4>", unsafe_allow_html=True)
+st.markdown("<h1 style='color:#2D8CFF; text-align:center;'>SmartLog Blockchain</h1>", unsafe_allow_html=True)
+st.markdown("<h4 style='color:#FF6F61; text-align:center;'>Simulador de Consenso e Detecção de Fraude — Proof of Authority (PoA)</h4>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
+
 
 # ============================================================
 # 👨‍💻 SOBRE O DESENVOLVEDOR
 # ============================================================
+st.markdown("<h2 style='text-align:center;'>Sobre o Desenvolvedor</h2>", unsafe_allow_html=True)
 st.markdown("""
-### Sobre o Desenvolvedor
 Sou **estudante e desenvolvedor na área de Inteligência Artificial aplicada (Machine Learning)**,  
 atuando em **projetos de IA Educacional, FinTech e Blockchain Inteligente**.
 
 Durante o curso de **Machine Learning**, desenvolvo **protótipos funcionais** que conectam IA e sistemas reais,  
 utilizando **Streamlit, Firebase, TensorFlow, Web3 e Scikit-Learn**.
 
-O **SmartLog Blockchain** é um **aplicativo educacional e técnico** que demonstra como a IA e a Blockchain  
-podem ser aplicadas em **sistemas logísticos e auditorias descentralizadas**, simulando **fraudes, consenso e recuperação de dados**.
+O **SmartLog Blockchain** é um aplicativo educacional e técnico que demonstra como IA e Blockchain  
+podem ser aplicadas em **sistemas logísticos e auditorias descentralizadas**, simulando fraudes, consenso e recuperação de dados.
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
+
 # ============================================================
 # 🚀 SOBRE O PROJETO
 # ============================================================
-st.markdown("<h2 style='color:#2D8CFF;'>O que é o SmartLog Blockchain</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='color:#2D8CFF; text-align:center;'>O que é o SmartLog Blockchain</h2>", unsafe_allow_html=True)
 st.markdown("""
-O **SmartLog Blockchain** é um **simulador visual e interativo** do consenso **Proof-of-Authority (PoA)**,
-um modelo utilizado em redes privadas que exige **validadores confiáveis**.
+O **SmartLog Blockchain** é um simulador **visual e interativo** do consenso **Proof-of-Authority (PoA)**,
+um modelo utilizado em redes privadas que exige validadores confiáveis.
 
 Com o simulador é possível:
 
 - Criar uma blockchain de entregas em tempo real;  
 - Simular o consenso entre nós validadores;  
-- Testar **fraudes**, adulterações de blocos e recuperação;  
+- Executar testes de **fraude e recuperação automática**;  
 - Integrar com **Web3** para registro descentralizado;  
-- Conectar com **Firestore** para auditoria de dados em nuvem.
+- Conectar com **Firestore** para auditoria e rastreabilidade em nuvem.
 
 Uma ferramenta ideal para aprender e demonstrar como blockchain reforça **segurança, rastreamento e auditoria digital**.
 """)
@@ -124,19 +125,19 @@ st.markdown("<hr>", unsafe_allow_html=True)
 
 
 # ============================================================
-# 🖼️ ETAPAS DO PROJETO (COM TODAS AS IMAGENS)
+# 🖼️ ETAPAS DO PROJETO (TODAS AS IMAGENS)
 # ============================================================
-st.markdown("<h2 style='color:#4B7BE5;'>Etapas Visuais do Projeto</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='color:#4B7BE5; text-align:center;'>Etapas Visuais do Projeto</h2>", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
-# Carregar imagens cortadas
+# Carregar imagens
 img_demo = crop_white_borders("smartlog_demo.png")
 img_audit = crop_white_borders("smartlog_auditoria.png")
 img_fraud = crop_white_borders("smartlog_fraude.png")
 img_fire = crop_white_borders("smartlog_firestore_auditoria.png")
 img_web3 = crop_white_borders("smartlog_web3_register.png")
-img_web3_explain = crop_white_borders("smartlog_fire.png")  # Explicação Web3
+img_web3_explain = crop_white_borders("smartlog_fire.png")
 
 
 with col1:
@@ -147,15 +148,15 @@ with col1:
         st.image(
             img_fraud,
             caption=(
-                "Simulação de Fraude — Um bloco é adulterado para demonstrar como a blockchain detecta "
-                "inconsistências automaticamente através dos hashes. Quando ocorre corrupção de dados, "
-                "a cadeia perde integridade e o sistema identifica o ponto exato da fraude."
+                "Simulação de Fraude — Um bloco adulterado quebra a integridade da cadeia. "
+                "A blockchain detecta automaticamente inconsistências e identifica o ponto exato do ataque."
             )
         )
 
+
 with col2:
     if img_audit:
-        st.image(img_audit, caption="Auditoria de Hashes — Antes e Depois")
+        st.image(img_audit, caption="Auditoria de Hashes — Verificação Antes e Depois")
 
     if img_fire:
         st.image(img_fire, caption="Sincronização e Auditoria no Firestore")
@@ -168,18 +169,13 @@ if img_web3:
         use_column_width=True
     )
 
-
-# ============================================================
-# 🆕 IMAGEM EXTRA — EXPLICAÇÃO WEB3
-# ============================================================
+# Explicação extra Web3
 if img_web3_explain:
     st.image(
         img_web3_explain,
         caption=(
-            "Arquitetura Web3 — Mostra como carteiras digitais, transações assinadas e contratos "
-            "inteligentes trabalham juntos para registrar eventos de forma descentralizada. "
-            "Esse fluxo explica o processo que garante segurança, rastreabilidade e imutabilidade "
-            "em aplicativos blockchain."
+            "Arquitetura Web3 — Explica como carteiras digitais, transações assinadas e contratos inteligentes "
+            "trabalham juntos para registrar eventos de forma descentralizada e segura."
         ),
         use_column_width=True
     )
@@ -190,18 +186,18 @@ st.markdown("<hr>", unsafe_allow_html=True)
 # ============================================================
 # 💡 OBJETIVOS
 # ============================================================
-st.markdown("<h2 style='color:#06D6A0;'>Objetivos e Impacto</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='color:#06D6A0; text-align:center;'>Objetivos e Impacto</h2>", unsafe_allow_html=True)
 st.markdown("""
-O **SmartLog Blockchain** foi criado para **ensinar e demonstrar** como blockchain pode ser aplicada em:
+O **SmartLog Blockchain** demonstra como blockchain pode ser usada em:
 
-- Logística inteligente;  
-- Auditoria automatizada;  
-- Rastreabilidade confiável;  
-- Deteção de fraudes e inconsistências;  
-- Transparência e governança digital.
+- Logística inteligente  
+- Auditoria automatizada  
+- Rastreabilidade confiável  
+- Deteção de fraudes e inconsistências  
+- Transparência e governança digital  
 
-A integração entre IA, blockchain e armazenamento em nuvem mostra como tecnologias modernas  
-podem **proteger dados**, **evitar adulterações** e **aumentar a confiabilidade** de sistemas reais.
+Ao integrar IA, blockchain e cloud, o projeto mostra como tecnologias modernas  
+podem proteger dados e aumentar a confiabilidade de sistemas reais.
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
@@ -210,7 +206,7 @@ st.markdown("<hr>", unsafe_allow_html=True)
 # ============================================================
 # 🧰 TECNOLOGIAS
 # ============================================================
-st.markdown("<h2 style='color:#F4A261;'>Tecnologias Utilizadas</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='color:#F4A261; text-align:center;'>Tecnologias Utilizadas</h2>", unsafe_allow_html=True)
 st.markdown("""
 - **Python** · Streamlit · Pandas · Hashlib · Requests  
 - **Blockchain Simulada (PoA)**  
