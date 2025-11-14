@@ -11,10 +11,11 @@ st.set_page_config(
 )
 
 # ============================================================
-# 🎨 ESTILO PROFISSIONAL — TÍTULOS CENTRALIZADOS + TEXTO À ESQUERDA
+# 🎨 ESTILO PROFISSIONAL — TÍTULOS CENTRALIZADOS + TEXTO À ESQUERDA (SEM HR)
 # ============================================================
 st.markdown("""
 <style>
+/* Fundo e Fonte */
 body {
     background-color: #f8f9fb;
     color: #222;
@@ -25,6 +26,7 @@ body {
 h1, h2, h3, h4 {
     font-weight: 600;
     text-align: center !important;
+    margin-bottom: 0.5rem; /* Ajuste para compensar a remoção do HR */
 }
 
 /* PARÁGRAFOS E LISTAS À ESQUERDA */
@@ -33,6 +35,7 @@ p, li, ul {
     margin-left: auto;
     margin-right: auto;
     max-width: 900px; /* EVITA TEXTO MUITO LARGO, FICA PREMIUM */
+    margin-bottom: 1.25rem; /* Espaçamento padrão */
 }
 
 /* Links */
@@ -48,15 +51,15 @@ a:hover {
 img {
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-/* Separador */
-hr {
+/* Separador (HR) - Removido */
+/* hr {
     border: 1px solid #eee;
     margin: 2.5rem 0;
-}
+} */
 </style>
 """, unsafe_allow_html=True)
 
@@ -67,7 +70,8 @@ hr {
 def crop_white_borders(img_path, base_width=650):
     try:
         img = Image.open(img_path)
-        bg = Image.new(img.mode, img.size, img.getpixel((0, 0)))
+        # Tenta pegar a cor do pixel (0,0) para usar como fundo
+        bg = Image.new(img.mode, img.size, img.getpixel((0, 0))) 
         diff = ImageChops.difference(img, bg)
         bbox = diff.getbbox()
         if bbox:
@@ -86,7 +90,7 @@ def crop_white_borders(img_path, base_width=650):
 st.markdown("<h1 style='color:#2D8CFF;'>SmartLog Blockchain</h1>", unsafe_allow_html=True)
 st.markdown("<h4 style='color:#FF6F61;'>Simulador de Consenso, Auditoria e Blockchain para Indústria 4.0</h4>", unsafe_allow_html=True)
 
-st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown("<br><br>", unsafe_allow_html=True) # Espaçamento maior após o cabeçalho
 
 
 # ============================================================
@@ -95,18 +99,18 @@ st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<h2>Sobre o Projeto</h2>", unsafe_allow_html=True)
 
 st.markdown("""
-O **SmartLog Blockchain** é uma ferramenta educacional e técnica desenvolvida para demonstrar, de forma visual,  
+O **SmartLog Blockchain** é uma ferramenta educacional e técnica desenvolvida para demonstrar, de forma visual, 
 como tecnologias modernas como **Blockchain, auditoria automática, Web3 e sistemas distribuídos** podem ser aplicadas em:
 
-- Logística inteligente  
-- Cadeias de suprimentos complexas  
-- Rastreabilidade ponta a ponta  
-- Automação e integração de dados  
-- Processos descentralizados  
+- Logística inteligente
+- Cadeias de suprimentos complexas
+- Rastreabilidade ponta a ponta
+- Automação e integração de dados
+- Processos descentralizados
 - Aplicações reais da **Indústria 4.0**
 """)
 
-st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown("<br><br>", unsafe_allow_html=True) # Espaçamento de seção
 
 
 # ============================================================
@@ -115,19 +119,19 @@ st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<h2 style='color:#2D8CFF;'>O que é o SmartLog Blockchain</h2>", unsafe_allow_html=True)
 
 st.markdown("""
-O simulador representa uma rede permissionada baseada no consenso **Proof-of-Authority (PoA)**,  
+O simulador representa uma rede permissionada baseada no consenso **Proof-of-Authority (PoA)**, 
 utilizado em ambientes industriais e logísticos que exigem **alta confiabilidade, segurança e auditoria automática**.
 
 Ele permite visualizar:
 
-- Validação de blocos por nós autorizados  
-- Hashes de integridade  
-- Simulações de ataques e recuperação automática  
-- Auditoria distribuída com Firestore  
-- Registro descentralizado usando **Web3** e contratos inteligentes  
+- Validação de blocos por nós autorizados
+- Hashes de integridade
+- Simulações de ataques e recuperação automática
+- Auditoria distribuída com Firestore
+- Registro descentralizado usando **Web3** e contratos inteligentes
 """)
 
-st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown("<br><br>", unsafe_allow_html=True) # Espaçamento de seção
 
 
 # ============================================================
@@ -137,6 +141,7 @@ st.markdown("<h2 style='color:#4B7BE5;'>Etapas Visuais do Projeto</h2>", unsafe_
 
 col1, col2 = st.columns(2)
 
+# É essencial que os arquivos de imagem ('smartlog_demo.png', etc.) estejam no diretório correto.
 img_demo = crop_white_borders("smartlog_demo.png")
 img_audit = crop_white_borders("smartlog_auditoria.png")
 img_fraud = crop_white_borders("smartlog_fraude.png")
@@ -175,7 +180,7 @@ if img_web3_explain:
         use_column_width=True
     )
 
-st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown("<br><br>", unsafe_allow_html=True) # Espaçamento de seção
 
 
 # ============================================================
@@ -186,16 +191,16 @@ st.markdown("<h2 style='color:#06D6A0;'>Objetivos e Impacto</h2>", unsafe_allow_
 st.markdown("""
 O SmartLog Blockchain demonstra, na prática, como tecnologias emergentes fortalecem:
 
-- Auditoria contínua  
-- Rastreabilidade confiável  
-- Detecção de fraudes  
-- Governança digital  
-- Automação na **Indústria 4.0**  
+- Auditoria contínua
+- Rastreabilidade confiável
+- Detecção de fraudes
+- Governança digital
+- Automação na **Indústria 4.0**
 
 É ideal para ensino, pesquisa, inovação e experimentação.
 """)
 
-st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown("<br><br>", unsafe_allow_html=True) # Espaçamento de seção
 
 
 # ============================================================
@@ -204,11 +209,14 @@ st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<h2 style='color:#F4A261;'>Tecnologias Utilizadas</h2>", unsafe_allow_html=True)
 
 st.markdown("""
-- Python — Streamlit — Pandas — Hashlib  
-- Blockchain (PoA) — Auditoria distribuída  
-- Firebase Firestore  
-- Web3 · Contratos Inteligentes  
-- Soluções para Indústria 4.0  
+- Python — Streamlit — Pandas — Hashlib
+- Blockchain (PoA) — Auditoria distribuída
+- Firebase Firestore
+- Web3 · Contratos Inteligentes
+- Soluções para Indústria 4.0
+""")
+
+st.markdown("<br><br><br>", unsafe_allow_html=True) # Espaço final para melhor acabamento
 """)
 
 st.markdown("<hr>", unsafe_allow_html=True)
