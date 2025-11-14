@@ -179,15 +179,3 @@ st.markdown("""
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
-# ============================================================
-# 📞 CONTATO
-# ============================================================
-st.markdown("""
-<h3 style='text-align:center; color:#2D8CFF;'>Contato</h3>
-<p style='text-align:center;'>
-    <b>E-mail:</b> <a href='mailto:claudio.y@hotmail.com'>claudio.y@hotmail.com</a><br>
-    <b>WhatsApp:</b> <a href='https://wa.me/5511986364794' target='_blank'>(11) 98636-4794</a>
-</p>
-""", unsafe_allow_html=True)
-
-st.caption("© 2025 SmartLog Blockchain — Desenvolvido em alinhamento aos valores do IA-Labs")
