@@ -217,3 +217,21 @@ st.markdown("""
 """)
 
 st.markdown("<br><br><br>", unsafe_allow_html=True) # Espaço final para melhor acabamento
+
+# =====================================
+# CONTATO / PORTFÓLIO
+# =====================================
+st.markdown("## <span style='color:#4B7BE5;'>Sobre o Desenvolvedor</span>", unsafe_allow_html=True)
+st.markdown("""
+**Autor:** *Claudio Hideki Yoshida*  
+**Função:** *Desenvolvedor de Machine Learning e Criador de Soluções em IA Aplicada*  
+
+**Contato:**  
+📧 [claudio.y@hotmail.com](mailto:claudio.y@hotmail.com)  
+📱 [WhatsApp: (11) 98636-4794](https://wa.me/5511986364794)
+
+Atua como **AI Solutions Prototyper**, unindo dados, design e tecnologia para demonstrar  
+como a inteligência artificial pode resolver **problemas práticos e sociais**.
+""")
+
+st.caption("© 2025 EduFin AI Cloud — Aplicativo demonstrativo de IA e Educação Financeira | Desenvolvido por Claudio Hideki Yoshida 💡")
