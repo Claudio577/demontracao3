@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # ============================================================
-# 🎨 ESTILO PROFISSIONAL ATUALIZADO (SEM HR)
+# 🎨 ESTILO PROFISSIONAL + REDUÇÃO GLOBAL DE IMAGENS
 # ============================================================
 st.markdown("""
 <style>
@@ -26,14 +26,13 @@ body {
 h1, h2, h3, h4 {
     font-weight: 600;
     text-align: center;
-    /* Adiciona um pequeno espaçamento inferior para simular a separação, já que o HR foi removido */
-    margin-bottom: 0.5rem; 
+    margin-bottom: 0.5rem;
 }
 
 /* Parágrafos */
 p {
     text-align: left;
-    margin-bottom: 1.5rem; /* Espaçamento extra abaixo dos parágrafos */
+    margin-bottom: 1.5rem;
 }
 
 /* Links */
@@ -45,27 +44,22 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Imagens */
+/* ===== IMAGENS DIMINUÍDAS GLOBALMENTE ===== */
 img {
+    max-width: 350px !important;
+    height: auto !important;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     margin-top: 1rem;
     margin-bottom: 1.5rem;
 }
-
-/* Separador (HR) - Removido e substituído por espaçamento */
-/* hr {
-    border: 1px solid #eee;
-    margin: 2rem 0;
-} */
 </style>
 """, unsafe_allow_html=True)
 
-
 # ============================================================
-# 🧩 FUNÇÃO — CORTAR BORDAS BRANCAS
+# 🧩 FUNÇÃO — CORTAR BORDAS BRANCAS + REDIMENSIONAR
 # ============================================================
-def crop_white_borders(img_path, base_width=600):
+def crop_white_borders(img_path, base_width=350):
     try:
         img = Image.open(img_path)
         bg = Image.new(img.mode, img.size, img.getpixel((0, 0)))
@@ -78,16 +72,14 @@ def crop_white_borders(img_path, base_width=600):
         img = img.resize((base_width, h_size), Image.Resampling.LANCZOS)
         return img
     except:
-        # st.error(f"Não foi possível carregar a imagem: {img_path}") # Debug opcional
         return None
-
 
 # ============================================================
 # 🧠 CABEÇALHO PRINCIPAL
 # ============================================================
 st.markdown("<h1 style='color:#2D8CFF;'>SmartLog Blockchain</h1>", unsafe_allow_html=True)
 st.markdown("<h4 style='color:#FF6F61;'>Simulador de Consenso, Auditoria e Blockchain para Indústria 4.0</h4>", unsafe_allow_html=True)
-st.markdown("<br>", unsafe_allow_html=True) # Adiciona espaço vertical no lugar do HR
+st.markdown("<br>", unsafe_allow_html=True)
 
 # ============================================================
 # 👨‍💻 SOBRE O PROJETO
@@ -97,18 +89,18 @@ st.markdown("""
 O **SmartLog Blockchain** é uma ferramenta educacional e técnica desenvolvida para demonstrar, de forma visual,
 como tecnologias modernas como **Blockchain, auditoria automática, Web3 e sistemas distribuídos** podem ser aplicadas a:
 
-- Logística inteligente
-- Cadeias de suprimentos complexas
-- Rastreabilidade ponta a ponta
-- Automação e integração de dados
-- Processos descentralizados
-- Aplicações reais da **Indústria 4.0**
+- Logística inteligente  
+- Cadeias de suprimentos complexas  
+- Rastreabilidade ponta a ponta  
+- Automação e integração de dados  
+- Processos descentralizados  
+- Aplicações reais da **Indústria 4.0**  
 
 A solução conecta conceitos teóricos com implementações reais, ajudando profissionais e estudantes
 a compreender como essas tecnologias melhoram segurança, transparência e eficiência operacional.
 """)
 
-st.markdown("<br>", unsafe_allow_html=True) # Adiciona espaço vertical no lugar do HR
+st.markdown("<br>", unsafe_allow_html=True)
 
 # ============================================================
 # 🚀 SOBRE O SMARTLOG BLOCKCHAIN
@@ -130,7 +122,7 @@ O sistema permite visualizar:
 Esses recursos mostram como Blockchain reforça a confiança e a automação digital na Indústria 4.0.
 """)
 
-st.markdown("<br>", unsafe_allow_html=True) # Adiciona espaço vertical no lugar do HR
+st.markdown("<br>", unsafe_allow_html=True)
 
 # ============================================================
 # 🖼️ ETAPAS VISUAIS
@@ -139,7 +131,6 @@ st.markdown("<h2 style='color:#4B7BE5;'>Etapas Visuais do Projeto</h2>", unsafe_
 
 col1, col2 = st.columns(2)
 
-# É essencial que os arquivos de imagem ('smartlog_demo.png', etc.) estejam no diretório correto.
 img_demo = crop_white_borders("smartlog_demo.png")
 img_audit = crop_white_borders("smartlog_auditoria.png")
 img_fraud = crop_white_borders("smartlog_fraude.png")
@@ -160,24 +151,12 @@ with col2:
         st.image(img_fire, caption="Sincronização com Firestore — Pipeline Distribuído")
 
 if img_web3:
-    st.image(
-        img_web3,
-        caption="Registro de Blocos em Web3 — Integração Blockchain para Indústria 4.0",
-        use_column_width=True
-    )
+    st.image(img_web3, caption="Registro de Blocos em Web3 — Indústria 4.0", width=350)
 
 if img_web3_explain:
-    st.image(
-        img_web3_explain,
-        caption=(
-            "Arquitetura Web3 — Explicação visual de como contratos inteligentes, transações assinadas "
-            "e carteiras digitais interagem para registrar eventos logísticos com segurança. "
-            "A base tecnológica usada em rastreabilidade, IoT industrial e automação na Indústria 4.0."
-        ),
-        use_column_width=True
-    )
+    st.image(img_web3_explain, caption="Arquitetura Web3 — Explicação Visual", width=350)
 
-st.markdown("<br>", unsafe_allow_html=True) # Adiciona espaço vertical no lugar do HR
+st.markdown("<br>", unsafe_allow_html=True)
 
 # ============================================================
 # 💡 OBJETIVOS E IMPACTO
@@ -189,28 +168,27 @@ ao garantir **segurança, rastreabilidade, transparência e automação intelige
 
 A solução permite:
 
-- Auditoria contínua
-- Prevenção de fraudes
-- Integração entre sistemas diferentes
-- Rastreabilidade ponta a ponta
-- Governança digital baseada em dados
-- Aplicações diretas na **Indústria 4.0**, IoT e automação
-
-É ideal para ensino, pesquisa, inovação e desenvolvimento de soluções reais.
+- Auditoria contínua  
+- Prevenção de fraudes  
+- Integração entre sistemas diferentes  
+- Rastreabilidade ponta a ponta  
+- Governança digital baseada em dados  
+- Aplicações diretas na **Indústria 4.0**, IoT e automação  
 """)
 
-st.markdown("<br>", unsafe_allow_html=True) # Adiciona espaço vertical no lugar do HR
+st.markdown("<br>", unsafe_allow_html=True)
 
 # ============================================================
 # 🧰 TECNOLOGIAS UTILIZADAS
 # ============================================================
 st.markdown("<h2 style='color:#F4A261;'>Tecnologias Utilizadas</h2>", unsafe_allow_html=True)
 st.markdown("""
-- **Python** · Streamlit · Pandas · Hashlib · Requests
-- **Blockchain (PoA)** — Rede permissionada simulada
-- **Firebase Firestore** — Auditoria distribuída
-- **Web3 / Contratos Inteligentes** — Registro descentralizado
-- **Soluções para Automação e Indústria 4.0**
+- **Python** · Streamlit · Pandas · Hashlib · Requests  
+- **Blockchain (PoA)** — Rede permissionada  
+- **Firebase Firestore** — Auditoria distribuída  
+- **Web3** — Registro descentralizado  
+- **Aplicações para Indústria 4.0**  
 """)
 
-st.markdown("<br><br>", unsafe_allow_html=True) # Espaço final para um melhor acabamento
+st.markdown("<br><br>", unsafe_allow_html=True)
+
